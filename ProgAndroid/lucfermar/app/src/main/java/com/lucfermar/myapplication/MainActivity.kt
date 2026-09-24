@@ -10,7 +10,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.lucfermar.myapplication.components.layouts.MiConstraintLayout1
 import com.lucfermar.myapplication.ui.theme.LucfermarTheme
+import components.layouts.MiBox
+import components.layouts.MiConstraintLayout
+//import components.layouts.MiConstraintLayout1
 import components.layouts.MiLayoutCombinado
 import components.layouts.MiRow
 
@@ -28,7 +32,9 @@ class MainActivity : ComponentActivity() {
                     //MiBox()
                     //MiColumn()
                     //MiRow(modifier = Modifier.fillMaxSize())
-                    MiLayoutCombinado(modifier = Modifier.fillMaxSize())
+                    //MiLayoutCombinado(modifier = Modifier.fillMaxSize())
+                    //MiConstraintLayout(modifier = Modifier.fillMaxSize())
+                    MiConstraintLayout1(modifier = Modifier.fillMaxSize())
 
                 }
             }
