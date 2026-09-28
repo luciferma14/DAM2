@@ -1,4 +1,4 @@
-package EjerciciosFicheros;
+package EjerciciosComentados;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

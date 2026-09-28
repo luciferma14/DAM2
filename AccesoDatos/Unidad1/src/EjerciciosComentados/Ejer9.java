@@ -1,4 +1,4 @@
-package EjerciciosFicheros;
+package EjerciciosComentados;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
