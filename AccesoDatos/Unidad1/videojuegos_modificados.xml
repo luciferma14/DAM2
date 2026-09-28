@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><catalogo>
+    <videojuego id="V001" plataforma="PC">
+        <titulo>Minecraft</titulo>
+        <genero>Supervivencia</genero>
+        <desarrollador>
+            <nombre>Mojang Studios</nombre>
+            <pais>Suecia</pais>
+        </desarrollador>
+    </videojuego>
+
+    <videojuego id="V002" plataforma="PS5">
+        <titulo>Astro Bot</titulo>
+        <genero>Plataformas</genero>
+        <desarrollador>
+            <nombre>Team Asobi</nombre>
+            <pais>Japón</pais>
+        </desarrollador>
+    </videojuego>
+
+    <videojuego id="V003" plataforma="PC">
+        <titulo>Hades</titulo>
+        <genero>Acción</genero>
+        <desarrollador>
+            <nombre>Supergiant Games</nombre>
+            <pais>Estados Unidos</pais>
+        </desarrollador>
+    </videojuego>
+</catalogo>
