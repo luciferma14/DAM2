@@ -1,4 +1,4 @@
-package com.lucfermar.myapplication
+package com.lucfermar.myapplication.components.layouts
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
