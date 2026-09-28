@@ -1,4 +1,4 @@
-package EjerciciosComentados;
+package EjerComentados;
 
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;

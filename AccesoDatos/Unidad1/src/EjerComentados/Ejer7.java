@@ -1,4 +1,4 @@
-package EjerciciosComentados;
+package EjerComentados;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;

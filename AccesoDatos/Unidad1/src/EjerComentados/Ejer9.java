@@ -1,4 +1,4 @@
-package EjerciciosComentados;
+package EjerComentados;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;

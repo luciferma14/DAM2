@@ -1,4 +1,4 @@
-package EjerciciosComentados;
+package EjerComentados;
 
 import com.opencsv.CSVWriter;
 import java.io.FileWriter;
