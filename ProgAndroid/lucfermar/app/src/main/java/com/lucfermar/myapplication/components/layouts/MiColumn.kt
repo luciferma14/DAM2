@@ -1,4 +1,4 @@
-package components.layouts
+package com.lucfermar.myapplication.components.layouts
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
