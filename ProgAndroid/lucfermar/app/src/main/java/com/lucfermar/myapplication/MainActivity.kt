@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.lucfermar.myapplication.components.layouts.MiEjercicio1
 import com.lucfermar.myapplication.components.layouts.MiFlowRowColumn
 import com.lucfermar.myapplication.ui.theme.LucfermarTheme
 //import components.layouts.MiConstraintLayout1
