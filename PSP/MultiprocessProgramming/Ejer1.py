@@ -1,4 +1,5 @@
 import os
+
 def child():
     print('Child: %d, Parent: %d' % (os.getpid(), os.getppid()))
     os._exit(0)
