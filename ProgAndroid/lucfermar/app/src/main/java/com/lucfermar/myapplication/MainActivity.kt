@@ -33,7 +33,9 @@ class MainActivity : ComponentActivity() {
                     //MiConstraintLayout(modifier = Modifier.fillMaxSize().padding(innerPadding))
                     //MiConstraintLayout1(modifier = Modifier.fillMaxSize().padding(innerPadding))
                     //MiEjercicio1(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                    MiFlowRowColumn(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    MiFlowRowColumn(modifier = Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding))
                 }
             }
         }
