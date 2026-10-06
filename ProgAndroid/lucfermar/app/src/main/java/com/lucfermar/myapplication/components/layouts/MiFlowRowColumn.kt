@@ -123,7 +123,11 @@ fun MiFlowRowColumn(modifier: Modifier) {
     }
 }
 
-// Una celda de la tabla
+@Composable
+fun Celda(x0: String, x2: Color) {
+    TODO("Not yet implemented")
+}
+
 // Una celda de la tabla
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
