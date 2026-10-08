@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.lucfermar.examen_ra1.components.layout.Ejercicio1
 import com.lucfermar.examen_ra1.ui.theme.Examen_ra1Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +21,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             Examen_ra1Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Lucia",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    //Greeting(
+                        //name = "Lucia",
+                        //modifier = Modifier.padding(innerPadding)
+                    //)
+                    Ejercicio1(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
