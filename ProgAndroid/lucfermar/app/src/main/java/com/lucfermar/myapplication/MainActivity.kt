@@ -23,8 +23,8 @@ class MainActivity : ComponentActivity() {
             LucfermarTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     //Greeting(
-                        //name = "Lucía",
-                        //modifier = Modifier.padding(innerPadding)
+                    //name = "Lucía",
+                    //modifier = Modifier.padding(innerPadding)
                     //)
                     //MiBox()
                     //MiColumn()
@@ -56,4 +56,9 @@ fun GreetingPreview() {
     LucfermarTheme {
         Greeting("Android")
     }
+}
+
+@Composable
+fun LucfermarTheme(content: @Composable () -> Unit) {
+    TODO("Not yet implemented")
 }
