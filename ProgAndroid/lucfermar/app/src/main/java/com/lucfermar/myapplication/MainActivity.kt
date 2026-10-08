@@ -11,9 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.lucfermar.myapplication.components.layouts.MiFlowRowColumn
+import com.lucfermar.myapplication.components.layouts.MiConstraintLayout
+import com.lucfermar.myapplication.components.layouts.MiConstraintLayout1
 import com.lucfermar.myapplication.ui.theme.LucfermarTheme
-//import components.layouts.MiConstraintLayout1
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,11 +31,9 @@ class MainActivity : ComponentActivity() {
                     //MiRow(modifier = Modifier.fillMaxSize().padding(innerPadding))
                     //MiLayoutCombinado(modifier = Modifier.fillMaxSize().padding(innerPadding))
                     //MiConstraintLayout(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                    //MiConstraintLayout1(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    MiConstraintLayout1(modifier = Modifier.fillMaxSize().padding(innerPadding))
                     //MiEjercicio1(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                    MiFlowRowColumn(modifier = Modifier
-                        .fillMaxSize()
-                        .padding(innerPadding))
+                    //MiFlowRowColumn(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 }
             }
         }

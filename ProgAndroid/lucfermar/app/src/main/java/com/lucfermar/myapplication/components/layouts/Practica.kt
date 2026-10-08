@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
-fun MiBox(){
+fun Practica(){
     Box(modifier = Modifier.fillMaxSize(), contentAlignment =
         Alignment.CenterStart){
         Box(modifier = Modifier
