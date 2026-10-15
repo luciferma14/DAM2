@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.lucfermar.myapplication.components.layouts.MiButton
 import com.lucfermar.myapplication.components.layouts.MiState
 import com.lucfermar.myapplication.components.layouts.MiText
 import com.lucfermar.myapplication.components.layouts.MiTextField
@@ -36,8 +37,8 @@ class MainActivity : ComponentActivity() {
                 //MiFlowRowColumn(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 //MiState(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 //MiText(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                MiTextFieldPadre(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                //MiTextField(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                //MiTextFieldPadre(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                MiButton(modifier = Modifier.fillMaxSize().padding(innerPadding))
             }
         }
     }

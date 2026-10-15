@@ -53,4 +53,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.constraint.layout)
+    implementation("net.objecthunter:exp4j:0.4.8")
 }
