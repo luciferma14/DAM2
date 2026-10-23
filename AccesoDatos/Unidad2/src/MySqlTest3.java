@@ -21,7 +21,7 @@ public class MySqlTest3 {
             Statement stmt = conexion.createStatement();
             PreparedStatement pstmt = conexion.prepareStatement("SELECT * FROM cliente WHERE nombre = ?");
         ){
-            System.out.println("Dime tu nombre para conecer tus datos: ");
+            System.out.println("Dime tu nombre para conocer tus datos: ");
             String nombre = teclado.nextLine();
 
             pstmt.setString(1, nombre);
