@@ -13,7 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.lucfermar.myapplication.components.layouts.MiButton
 import com.lucfermar.myapplication.components.layouts.MiCalculadora
-
+import com.lucfermar.myapplication.components.layouts.MiIcono
+import com.lucfermar.myapplication.components.layouts.MiImagen
+import com.lucfermar.myapplication.components.layouts.MiImagen2
+import com.lucfermar.myapplication.components.layouts.MiImagen3
+import com.lucfermar.myapplication.components.layouts.MiImagen4
+import com.lucfermar.myapplication.components.layouts.MiImagenDeInternet
 import com.lucfermar.myapplication.components.layouts.MiState
 import com.lucfermar.myapplication.components.layouts.MiText
 import com.lucfermar.myapplication.components.layouts.MiTextField
@@ -41,7 +46,10 @@ class MainActivity : ComponentActivity() {
                 //MiText(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 //MiTextFieldPadre(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 //MiButton(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                MiCalculadora(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                //MiCalculadora(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                //MiImagen4()
+                //MiImagenDeInternet()
+                MiIcono()
             }
         }
     }
