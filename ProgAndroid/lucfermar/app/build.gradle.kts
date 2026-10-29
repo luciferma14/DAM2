@@ -57,4 +57,5 @@ dependencies {
     implementation("net.objecthunter:exp4j:0.4.8")
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
+    implementation(libs.lottie.compose)
 }

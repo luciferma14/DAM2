@@ -13,6 +13,7 @@ material = "1.14.0"
 foundationLayout = "1.12.1"
 coilCompose = "3.6.3"
 foundation = "1.12.1"
+lottie = "6.7.1"
 
 
 [libraries]
@@ -36,6 +37,7 @@ androidx-compose-foundation-layout = { group = "androidx.compose.foundation", na
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref ="coilCompose" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

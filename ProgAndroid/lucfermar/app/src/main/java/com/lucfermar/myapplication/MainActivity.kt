@@ -19,6 +19,8 @@ import com.lucfermar.myapplication.components.layouts.MiImagen2
 import com.lucfermar.myapplication.components.layouts.MiImagen3
 import com.lucfermar.myapplication.components.layouts.MiImagen4
 import com.lucfermar.myapplication.components.layouts.MiImagenDeInternet
+import com.lucfermar.myapplication.components.layouts.MiProgreso
+import com.lucfermar.myapplication.components.layouts.MiProgresoAnimacionEjercicio
 import com.lucfermar.myapplication.components.layouts.MiState
 import com.lucfermar.myapplication.components.layouts.MiText
 import com.lucfermar.myapplication.components.layouts.MiTextField
@@ -49,7 +51,9 @@ class MainActivity : ComponentActivity() {
                 //MiCalculadora(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 //MiImagen4()
                 //MiImagenDeInternet()
-                MiIcono()
+                //MiIcono()
+                //MiProgreso(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                MiProgresoAnimacionEjercicio(modifier = Modifier.fillMaxSize().padding(innerPadding))
             }
         }
     }
