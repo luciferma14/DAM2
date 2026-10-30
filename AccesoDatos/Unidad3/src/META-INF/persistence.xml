@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
+    <persistence-unit name="TIENDA_ORM_PU" transaction-type="RESOURCE_LOCAL">
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <!-- Entidades gestionadas por esta unidad de persistencia -->
+        <!-- Aquí colocaremos las clases que convertiremos en tablas -->
+        <class>tienda_orm.Producto</class>
+
+        <properties>
+                <!-- Datos de conexión con MySQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.176:3306/tienda_orm"/>
+            <property name="jakarta.persistence.jdbc.user" value="lucia"/>
+            <property name="jakarta.persistence.jdbc.password" value="hola"/>
+            <!-- Configuración de Hibernate -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
