@@ -4,10 +4,10 @@
         <provider>
             org.hibernate.jpa.HibernatePersistenceProvider
         </provider>
-
         <!-- Entidades gestionadas por esta unidad de persistencia -->
         <!-- Aquí colocaremos las clases que convertiremos en tablas -->
         <class>tienda_orm.Producto</class>
+        <class>tienda_orm.FichaTecnica</class>
 
         <properties>
                 <!-- Datos de conexión con MySQL -->
