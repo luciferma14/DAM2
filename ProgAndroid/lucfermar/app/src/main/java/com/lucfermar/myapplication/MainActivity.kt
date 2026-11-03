@@ -11,20 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.lucfermar.myapplication.components.layouts.MiButton
-import com.lucfermar.myapplication.components.layouts.MiCalculadora
-import com.lucfermar.myapplication.components.layouts.MiIcono
-import com.lucfermar.myapplication.components.layouts.MiImagen
-import com.lucfermar.myapplication.components.layouts.MiImagen2
-import com.lucfermar.myapplication.components.layouts.MiImagen3
-import com.lucfermar.myapplication.components.layouts.MiImagen4
-import com.lucfermar.myapplication.components.layouts.MiImagenDeInternet
-import com.lucfermar.myapplication.components.layouts.MiProgreso
-import com.lucfermar.myapplication.components.layouts.MiProgresoAnimacionEjercicio
-import com.lucfermar.myapplication.components.layouts.MiState
-import com.lucfermar.myapplication.components.layouts.MiText
-import com.lucfermar.myapplication.components.layouts.MiTextField
-import com.lucfermar.myapplication.components.layouts.MiTextFieldPadre
+import com.lucfermar.myapplication.components.layouts.MiTercerEstadoCheckBox
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +22,7 @@ class MainActivity : ComponentActivity() {
             Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                 //Greeting(
                 //name = "Lucía",
-                //modifier = Modifier.padding(innerPadding)
-                //)
+                //modifier = Modifier.padding(innerPadding))
                 //MiBox()
                 //MiColumn()
                 //MiRow(modifier = Modifier.fillMaxSize().padding(innerPadding))
@@ -53,7 +40,11 @@ class MainActivity : ComponentActivity() {
                 //MiImagenDeInternet()
                 //MiIcono()
                 //MiProgreso(modifier = Modifier.fillMaxSize().padding(innerPadding))
-                MiProgresoAnimacionEjercicio(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                //MiProgresoAnimacionEjercicio(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                //MiSwitch(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                //MiCheckBox(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                //MiPadreCheckBoxes(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                MiTercerEstadoCheckBox(modifier = Modifier.fillMaxSize().padding(innerPadding))
             }
         }
     }
