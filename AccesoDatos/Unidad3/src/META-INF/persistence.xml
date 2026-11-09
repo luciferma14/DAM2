@@ -22,3 +22,102 @@
         </properties>
     </persistence-unit>
 </persistence>
+
+<!-- CLINICA VETERINARIA -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.1">
+
+    <persistence-unit name="PU_CLINICA_VETERINARIA" transaction-type="RESOURCE_LOCAL">
+
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <!-- Entidades gestionadas por esta unidad de persistencia -->
+        <class>clinica_veterinaria.Propietario</class>
+        <class>clinica_veterinaria.Animal</class>
+        <class>clinica_veterinaria.Veterinario</class>
+        <class>clinica_veterinaria.Consulta</class>
+
+        <properties>
+            <!-- Datos de conexión con MySQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.176:3306/clinica_veterinaria"/>
+            <property name="jakarta.persistence.jdbc.user" value="lucia"/>
+            <property name="jakarta.persistence.jdbc.password" value="hola"/>
+
+            <!-- Configuración de Hibernate -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
+
+<!-- CÁTALOGO LIBROS -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.1">
+
+    <persistence-unit name="PU_CATALOGO_LIBROS" transaction-type="RESOURCE_LOCAL">
+
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <!-- Entidades gestionadas por esta unidad de persistencia -->
+        <class>catalogo_libros.Libro</class>
+        <class>catalogo_libros.FichaBibliografica</class>
+
+        <properties>
+            <!-- Datos de conexión con MySQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.176:3306/catalogo_libros"/>
+            <property name="jakarta.persistence.jdbc.user" value="lucia"/>
+            <property name="jakarta.persistence.jdbc.password" value="hola"/>
+
+            <!-- Configuración de Hibernate -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
+
+<!-- ACADEMIA -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.1">
+
+    <persistence-unit name="PU_ACADEMIA" transaction-type="RESOURCE_LOCAL">
+
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <!-- Entidades gestionadas por esta unidad de persistencia -->
+        <class>academia.Alumno</class>
+        <class>academia.Expediente</class>
+        <class>academia.Curso</class>
+
+        <properties>
+            <!-- Datos de conexión con MySQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.3.176:3306/academia"/>
+            <property name="jakarta.persistence.jdbc.user" value="lucia"/>
+            <property name="jakarta.persistence.jdbc.password" value="hola"/>
+
+            <!-- Configuración de Hibernate -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>

@@ -22,11 +22,7 @@ public class FichaTecnica{
 
     @OneToOne 
     // Como queremos qeu la clace ajena esté en FichaTecnica, hacemos lo siguiente
-    @JoinColumn (
-        name = "id_producto",
-        unique = true,
-        nullable = false
-    )
+    @JoinColumn (name = "id_producto", unique = true, nullable = false)
     private Producto producto;
 
     public FichaTecnica(){}

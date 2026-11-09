@@ -1,5 +1,4 @@
 import java.math.BigDecimal;
-
 import jakarta.persistence.*;
 import tienda_orm.FichaTecnica;
 import tienda_orm.Producto;

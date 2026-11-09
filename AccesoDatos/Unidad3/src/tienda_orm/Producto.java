@@ -20,10 +20,8 @@ public class Producto{
     @Column (name = "stock", nullable = false) 
     private int stock;
 
-    @OneToOne (
-        mappedBy = "producto",
-        cascade = CascadeType.PERSIST
-    ) // Atributo producto dentro de Ficha Tecnica
+    // Atributo producto dentro de Ficha Tecnica
+    @OneToOne (mappedBy = "producto", cascade = CascadeType.PERSIST) 
     private FichaTecnica fichaTecnica;
 
     public Producto(){}
