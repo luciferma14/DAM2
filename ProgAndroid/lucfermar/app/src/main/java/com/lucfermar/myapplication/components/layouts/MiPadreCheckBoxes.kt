@@ -27,7 +27,7 @@ fun CheckBoxConText(
     siCheckedCambia: (EstadoCheckbox) -> Unit
 ) {
     // Si el estado trae color lo usa; si no, el color primario del tema
-    val colorMarcado = miestadoCheckbox.color
+    val colorMarcado = miestadoCheckbox.color ?: MaterialTheme.colorScheme.primary
 
     Row(
         verticalAlignment = Alignment.CenterVertically,

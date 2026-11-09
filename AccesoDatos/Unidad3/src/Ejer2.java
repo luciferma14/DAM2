@@ -1,5 +1,7 @@
+import catalogo_libros.FichaBibliografica;
+import catalogo_libros.Libro;
 import jakarta.persistence.*;
-import catalogo_libros.*;
+
 
 public class Ejer2 {
 

@@ -19,7 +19,7 @@ public class Libro {
     private String editorial;
 
     @OneToOne(mappedBy = "libro", cascade = CascadeType.PERSIST)
-    private FichaBibliografica = fichaBibliografica;
+    private FichaBibliografica fichaBibliografica;
 
 
     public Libro() {}

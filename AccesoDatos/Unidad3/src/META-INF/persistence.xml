@@ -21,13 +21,8 @@
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
-</persistence>
 
-<!-- CLINICA VETERINARIA -->
-
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             version="3.1">
+    <!-- CLINICA VETERINARIA -->
 
     <persistence-unit name="PU_CLINICA_VETERINARIA" transaction-type="RESOURCE_LOCAL">
 
@@ -55,13 +50,8 @@
         </properties>
 
     </persistence-unit>
-</persistence>
 
-<!-- CÁTALOGO LIBROS -->
-
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             version="3.1">
+    <!-- CÁTALOGO LIBROS -->
 
     <persistence-unit name="PU_CATALOGO_LIBROS" transaction-type="RESOURCE_LOCAL">
 
@@ -87,13 +77,8 @@
         </properties>
 
     </persistence-unit>
-</persistence>
 
-<!-- ACADEMIA -->
-
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             version="3.1">
+    <!-- ACADEMIA -->
 
     <persistence-unit name="PU_ACADEMIA" transaction-type="RESOURCE_LOCAL">
 
