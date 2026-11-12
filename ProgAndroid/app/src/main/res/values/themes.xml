@@ -2,4 +2,6 @@
 <resources>
 
     <style name="Theme.Examen_ra1" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.RA2" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
