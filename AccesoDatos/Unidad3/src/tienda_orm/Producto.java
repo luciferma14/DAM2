@@ -1,6 +1,9 @@
 package tienda_orm;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.*;
 
 @Entity 
@@ -23,6 +26,18 @@ public class Producto{
     // Atributo producto dentro de Ficha Tecnica
     @OneToOne (mappedBy = "producto", cascade = CascadeType.PERSIST) 
     private FichaTecnica fichaTecnica;
+
+    @ManyToMany
+    @JoinColumn(name = "id_categoria", nullable = false)
+    private Categoria categoria;
+
+    @ManyToMany 
+    @JoinTable (
+        name = "producto_label",
+        joinColumns = @JoinColumn(name ="producto_id"),
+        inverseJoinColumns = @JoinColumn(name = "id_label")
+    )
+    private Set<Label> etiquetas = new HashSet<>();
 
     public Producto(){}
 
