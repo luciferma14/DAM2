@@ -71,6 +71,7 @@ fun MiNombre(valor: String, onValueChange: (String) -> Unit) {
     TextField(
         value = valor,
         onValueChange = { onValueChange(it) },
+        modifier = Modifier.fillMaxWidth(),
         singleLine = true,
         placeholder = { Text("Nombre") }
     )
@@ -82,6 +83,7 @@ fun MiApellido(valor: String, onValueChange: (String) -> Unit) {
     TextField(
         value = valor,
         onValueChange = { onValueChange(it) },
+        modifier = Modifier.fillMaxWidth(),
         singleLine = true,
         placeholder = { Text("Apellidos") }
     )
@@ -119,6 +121,7 @@ fun MiContrasenya(valor: String, onValueChange: (String) -> Unit) {
     TextField(
         value = valor,
         onValueChange = { onValueChange(it) },
+        modifier = Modifier.fillMaxWidth(),
         singleLine = true,
         label = { Text("Contraseña") },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -140,7 +143,7 @@ fun MiContrasenya(valor: String, onValueChange: (String) -> Unit) {
 fun MiCondicionesUso(checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Switch(checked = checked, onCheckedChange = onCheckedChange)
-        Text("Aceptar las condiciones de uso", modifier = Modifier.weight(1f))
+        Text("   Aceptar las condiciones de uso", modifier = Modifier.weight(1f))
     }
 }
 
@@ -149,6 +152,7 @@ fun MiBoton(habilitado: Boolean, onClick: () -> Unit) {
     Button(
         onClick = onClick,
         enabled = habilitado,
+        modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFF4CAF50),          // verde habilitado
             contentColor = Color.White,

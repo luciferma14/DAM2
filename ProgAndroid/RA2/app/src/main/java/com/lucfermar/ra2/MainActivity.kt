@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.lucfermar.ra2.components.layouts.MiFormularioEjercicio2
+import com.lucfermar.ra2.components.layouts.MiFormularioEjercicio5
 import com.lucfermar.ra2.ui.theme.RA2Theme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +23,8 @@ class MainActivity : ComponentActivity() {
             RA2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
-                    MiFormularioEjercicio2(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    //MiFormularioEjercicio2(modifier = Modifier.fillMaxSize().padding(innerPadding))
+                    MiFormularioEjercicio5(modifier = Modifier.fillMaxSize().padding(innerPadding))
                 }
             }
         }
