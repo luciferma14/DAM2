@@ -1,6 +1,4 @@
-import java.math.BigDecimal;
 import jakarta.persistence.*;
-import tienda_orm.FichaTecnica;
 import tienda_orm.Producto;
 
 public class App2 {
@@ -16,20 +14,20 @@ public class App2 {
         em.close();
 
         try{
-            tx.begin();
+            //tx.begin();
 
            
             
             
 
-            tx.commit();
+            //tx.commit();
             System.out.println("Se ha insertado correctamente");
 
         } catch (Exception e) {
 
-            if(tx.isActive()){
-                tx.rollback();
-            }
+            // if(tx.isActive()){
+            //     tx.rollback();
+            // }
 
             e.printStackTrace();
         }
