@@ -21,18 +21,16 @@ fun MiFormularioEjercicio5(modifier: Modifier) {
     var nombre by rememberSaveable { mutableStateOf("") }
     var telefono by rememberSaveable { mutableStateOf("") }
     var hamburguesa by rememberSaveable { mutableStateOf("") }
-    var picanteMin by rememberSaveable { mutableFloatStateOf(2f) }
-    var picanteMax by rememberSaveable { mutableFloatStateOf(6f) }
+    var picante by rememberSaveable { mutableFloatStateOf(5f) }
     var extraQueso by rememberSaveable { mutableStateOf(false) }
     var menuAbierto by rememberSaveable { mutableStateOf(false) }
     var confirmado by rememberSaveable { mutableStateOf(false) }
 
-    val pedidoCompleto = nombre.isNotBlank()
-            && telefono.isNotBlank()
+    val pedidoCompleto = nombre.isNotBlank() && telefono.isNotBlank()
 
     val colorPicante = when {
-        (picanteMin + picanteMax) / 2 < 5 -> Color.Red
-        (picanteMin + picanteMax) / 2 <= 7 -> Color.Yellow
+        picante < 3 -> Color.Red
+        picante <= 6 -> Color.Yellow
         else -> Color.Green
     }
 
@@ -63,15 +61,10 @@ fun MiFormularioEjercicio5(modifier: Modifier) {
             }
         )
 
-        MiPicante(
-            minimo = picanteMin,
-            maximo = picanteMax,
-            onValueChange = {
-                picanteMin = it.start
-                picanteMax = it.endInclusive
-                confirmado = false
-            }
-        )
+        MiPicante(valor = picante) {
+            picante = it
+            confirmado = false
+        }
 
         MiExtraQueso(extraQueso) {
             extraQueso = it
@@ -81,12 +74,11 @@ fun MiFormularioEjercicio5(modifier: Modifier) {
         Spacer(Modifier.height(20.dp))
 
         MiResumenPedido(
-            nombre,
-            telefono,
-            hamburguesa,
-            picanteMin,
-            picanteMax,
-            extraQueso
+            nombre = nombre,
+            telefono = telefono,
+            hamburguesa = hamburguesa,
+            picante = picante,
+            extraQueso = extraQueso
         )
 
         Spacer(Modifier.height(20.dp))
@@ -123,180 +115,164 @@ fun MiNombrePedido(
 
 @Composable
 fun MiTelefonoPedido(
-    valor: String,
-    onValueChange: (String) -> Unit
-) {
-    TextField(
-        value = valor,
-        onValueChange = onValueChange,
-        modifier = Modifier.fillMaxWidth(),
-        singleLine = true,
-        label = { Text("Teléfono") },
-        keyboardOptions = KeyboardOptions(
-            keyboardType = KeyboardType.Phone
-        )
-    )
-
-    Spacer(Modifier.height(15.dp))
-}
-
-@Composable
-fun MiHamburguesa(
-    hamburguesaSeleccionada: String,
-    menuAbierto: Boolean,
-    onMenuChange: (Boolean) -> Unit,
-    onHamburguesaChange: (String) -> Unit
-) {
-    Text("Elige tu hamburguesa:")
-
-    Box(modifier = Modifier.fillMaxWidth()) {
-
+        valor: String,
+        onValueChange: (String) -> Unit
+    ) {
         TextField(
-            value = hamburguesaSeleccionada,
-            onValueChange = {},
+            value = valor,
+            onValueChange = onValueChange,
             modifier = Modifier.fillMaxWidth(),
-            readOnly = true,
             singleLine = true,
-            placeholder = { Text("Seleccionar hamburguesa") },
-            trailingIcon = { Text("▼") }
+            label = { Text("Teléfono") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Phone
+            )
         )
 
-        // Captura el clic sobre el campo
-        Box(
-            modifier = Modifier
-                .matchParentSize()
-                .clickable {
-                    onMenuChange(true)
-                }
-        )
+        Spacer(Modifier.height(15.dp))
+    }
 
-        DropdownMenu(
-            expanded = menuAbierto,
-            onDismissRequest = {
-                onMenuChange(false)
-            }
-        ) {
-            listOf(
-                "Clásica",
-                "Doble queso",
-                "BBQ",
-                "Vegetal"
-            ).forEach { opcion ->
+    @Composable
+    fun MiHamburguesa(
+        hamburguesaSeleccionada: String,
+        menuAbierto: Boolean,
+        onMenuChange: (Boolean) -> Unit,
+        onHamburguesaChange: (String) -> Unit
+    ) {
+        Text("Elige tu hamburguesa:")
 
-                DropdownMenuItem(
-                    text = { Text(opcion) },
-                    onClick = {
-                        onHamburguesaChange(opcion)
-                        onMenuChange(false)
+        Box(modifier = Modifier.fillMaxWidth()) {
+
+            TextField(
+                value = hamburguesaSeleccionada,
+                onValueChange = {},
+                modifier = Modifier.fillMaxWidth(),
+                readOnly = true,
+                singleLine = true,
+                placeholder = { Text("Seleccionar hamburguesa") }
+            )
+
+            // Captura el clic sobre el campo
+            Box(
+                modifier = Modifier
+                    .matchParentSize()
+                    .clickable {
+                        onMenuChange(true)
                     }
-                )
+            )
+
+            DropdownMenu(
+                expanded = menuAbierto,
+                onDismissRequest = {
+                    onMenuChange(false)
+                }
+            ) {
+                listOf(
+                    "Clásica",
+                    "Doble queso",
+                    "BBQ",
+                    "Vegetal"
+                ).forEach { opcion ->
+
+                    DropdownMenuItem(
+                        text = { Text(opcion) },
+                        onClick = {
+                            onHamburguesaChange(opcion)
+                            onMenuChange(false)
+                        }
+                    )
+                }
             }
         }
+
+        Spacer(Modifier.height(15.dp))
     }
 
-    Spacer(Modifier.height(15.dp))
-}
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun MiPicante(
+        valor: Float,
+        onValueChange: (Float) -> Unit
+    ) {
+        // El color de la pista cambia según el nivel de picante
+        val colorPicante = when {
+            valor <= 4 -> Color.Red
+            valor <= 7 -> Color.Yellow
+            else -> Color.Green
+        }
 
-@Composable
-fun MiPicante(
-    minimo: Float,
-    maximo: Float,
-    onValueChange: (ClosedFloatingPointRange<Float>) -> Unit
-) {
-    val nivelMedio = (minimo + maximo) / 2
+        Text("Nivel de picante: ${valor.toInt()}")
 
-    val colorPicante = when {
-        nivelMedio < 5 -> Color.Red
-        nivelMedio <= 7 -> Color.Yellow
-        else -> Color.Green
-    }
-
-    Text("Nivel de picante:")
-
-    Text(
-        "Rango: ${minimo.toInt()} - ${maximo.toInt()}"
-    )
-
-    RangeSlider(
-        value = minimo..maximo,
-        onValueChange = onValueChange,
-        valueRange = 0f..10f,
-        colors = SliderDefaults.colors(
-            thumbColor = Color(0xFF4B6198),
-            activeTrackColor = colorPicante,
-            inactiveTrackColor = Color.LightGray
+        Slider(
+            value = valor,
+            onValueChange = onValueChange,
+            valueRange = 0f..10f,
+            colors = SliderDefaults.colors(
+                thumbColor = Color(0xFF4B6198),
+                activeTrackColor = colorPicante,
+                inactiveTrackColor = Color.LightGray
+            )
         )
-    )
 
-    Spacer(Modifier.height(15.dp))
-}
+        Spacer(Modifier.height(15.dp))
+    }
 
-@Composable
-fun MiExtraQueso(
-    checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit
-) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically
+    @Composable
+    fun MiExtraQueso(
+        checked: Boolean,
+        onCheckedChange: (Boolean) -> Unit
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                "Extra de queso",
+                modifier = Modifier.weight(1f)
+            )
+
+            Switch(
+                checked = checked,
+                onCheckedChange = onCheckedChange
+            )
+        }
+    }
+    @Composable
+    fun MiResumenPedido(
+        nombre: String,
+        telefono: String,
+        hamburguesa: String,
+        picante: Float,
+        extraQueso: Boolean
     ) {
         Text(
-            "Extra de queso",
-            modifier = Modifier.weight(1f)
+            "Resumen del pedido",
+            style = MaterialTheme.typography.titleMedium
         )
-
-        Switch(
-            checked = checked,
-            onCheckedChange = onCheckedChange
-        )
+        Text("Cliente: ${nombre.ifBlank { "-" }}")
+        Text("Teléfono: ${telefono.ifBlank { "-" }}")
+        Text("Hamburguesa: ${hamburguesa.ifBlank { "sin elegir" }}")
+        Text("Picante: ${picante.toInt()} / 10")
+        Text("Extra de queso: ${if (extraQueso) "Sí" else "No"}")
     }
-}
 
-@Composable
-fun MiResumenPedido(
-    nombre: String,
-    telefono: String,
-    hamburguesa: String,
-    minimo: Float,
-    maximo: Float,
-    queso: Boolean
-) {
-    Card(
-        modifier = Modifier.fillMaxWidth()
+    @Composable
+    fun MiBotonPedido(
+        habilitado: Boolean,
+        onClick: () -> Unit
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
+        Button(
+            onClick = onClick,
+            enabled = habilitado,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp),
+            shape = RoundedCornerShape(50),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF4B6198),
+                contentColor = Color.White,
+                disabledContainerColor = Color.Gray
+            )
         ) {
-            Text("Resumen del pedido:")
-
-            Spacer(Modifier.height(10.dp))
-
-            Text("Nombre: ${nombre.ifBlank { "No indicado" }}")
-            Text("Teléfono: ${telefono.ifBlank { "No indicado" }}")
-            Text("Hamburguesa: ${hamburguesa.ifBlank { "No seleccionada" }}")
-            Text("Picante: ${minimo.toInt()} - ${maximo.toInt()}")
-            Text("Extra de queso: ${if (queso) "Sí" else "No"}")
+            Text("Confirmar pedido")
         }
     }
-}
-
-@Composable
-fun MiBotonPedido(
-    habilitado: Boolean,
-    onClick: () -> Unit
-) {
-    Button(
-        onClick = onClick,
-        enabled = habilitado,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(48.dp),
-        shape = RoundedCornerShape(50),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFF4B6198),
-            contentColor = Color.White,
-            disabledContainerColor = Color.Gray
-        )
-    ) {
-        Text("Confirmar pedido")
-    }
-}
